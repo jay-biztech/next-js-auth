@@ -6,8 +6,11 @@ import { usePosts } from './hooks';
 
 const Posts = () => {
   const { data: session } = useSession({ required: true });
-
   const [posts] = usePosts();
+
+  if (!session) {
+    return;
+  }
 
   return (
     <div className="container">
