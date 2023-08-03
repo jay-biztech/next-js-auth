@@ -1,7 +1,9 @@
 'use client';
 
+import Posts from './components/Posts'
+
 export default function Home() {
   return <main>
-    <div>Home Page</div>
+    <Posts />
   </main>;
 }
