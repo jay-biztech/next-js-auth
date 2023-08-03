@@ -2,7 +2,7 @@
 
 import { usePost } from '../hooks';
 
-export default function Page({ params }) {
+export default function Page({ params }: { params: { id: string } }) {
   const [post] = usePost(params.id);
 
   return (
