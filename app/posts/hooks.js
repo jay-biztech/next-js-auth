@@ -21,3 +21,24 @@ export const usePosts = () => {
 
   return [posts];
 };
+
+export const usePost = (postId) => {
+  const [post, setPost] = useState();
+
+  useEffect(() => {
+    const fetchPost = async () => {
+      const posts = axios
+        .get(`/api/posts/${postId}`)
+        .then(function ({ data }) {
+          setPost(data.data);
+        })
+        .catch(function (error) {
+          console.log(error);
+        });
+    };
+
+    fetchPost();
+  }, []);
+
+  return [post];
+};

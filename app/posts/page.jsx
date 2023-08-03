@@ -1,6 +1,7 @@
 'use client';
 
 import { useSession } from 'next-auth/react';
+import Link from 'next/link';
 import { usePosts } from './hooks';
 
 const Posts = () => {
@@ -15,7 +16,9 @@ const Posts = () => {
           <div key={post.id}>
             <div className="card">
               <div className="card-body">
-                <h5 className="card-title">{post.title}</h5>
+                <h5 className="card-title">
+                  <Link href={`posts/${post.id}`}>{post.title}</Link>
+                </h5>
                 <p className="card-text">{post.body}</p>
                 {post.tags.map((tag, index) => {
                   return (
