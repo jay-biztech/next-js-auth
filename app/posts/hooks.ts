@@ -1,6 +1,6 @@
 import axios from 'axios';
 import { useEffect, useState } from 'react';
-import { Post } from './types';
+import { Post, PostResponse } from './types';
 
 export const usePosts = () => {
   const [posts, setPosts] = useState<Post[]>();
@@ -8,9 +8,9 @@ export const usePosts = () => {
   useEffect(() => {
     const fetchPosts = async () => {
       axios
-        .get('/api/posts')
-        .then(function ({ data }) {
-          setPosts(data.posts);
+        .get<PostResponse>('/api/posts')
+        .then(function (response) {
+          setPosts(response.data.posts);
         })
         .catch(function (error) {
           console.log(error);

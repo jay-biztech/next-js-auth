@@ -6,3 +6,7 @@ export interface Post {
   tags: [];
   reactions: number;
 }
+
+export interface PostResponse {
+  posts: Post[];
+}
