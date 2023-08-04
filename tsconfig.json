@@ -23,6 +23,6 @@
       "@/*": ["./*"]
     }
   },
-  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", ".next/types/**/*.ts", "app/api/auth/[...nextauth]/route.ts", "app/api/posts/route.ts", "app/posts/page.tsx", "app/posts/[id]/page.tsx"],
+  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", ".next/types/**/*.ts", "app/api/auth/[...nextauth]/route.ts", "app/api/posts/route.ts", "app/posts/page.tsx", "app/posts/[id]/page.tsx", "next.config.js"],
   "exclude": ["node_modules"]
 }
