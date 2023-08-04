@@ -1,9 +1,15 @@
 'use client';
 
+import { useSession } from 'next-auth/react';
 import { usePost } from '../hooks';
 
 export default function Page({ params }: { params: { id: string } }) {
+  const { data: session } = useSession({ required: true });
   const [post] = usePost(params.id);
+
+  if (!session) {
+    return;
+  }
 
   return (
     <div className="container">
